@@ -1,0 +1,46 @@
+:root {
+    --green: #53763a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.canva img {
+    max-width: 600px;
+}
+
+#corridor {
+    width: 100%;
+    height: 100vh;
+    gap: 15%;
+
+    padding-left: 350px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+#corridor>:last-child {
+    padding-right: 350px;
+}
+
+.canva img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#davi {
+    background-image: url('assets/davi/baiacu.png');
+}
