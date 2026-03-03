@@ -34,3 +34,13 @@ body {
 #corridor>:last-child {
     padding-right: 350px;
 }
+
+.canva img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#davi {
+    background-image: url('assets/davi/baiacu.png');
+}
