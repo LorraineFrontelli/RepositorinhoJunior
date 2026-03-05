@@ -12,10 +12,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-x: auto;
 }
 
-.canva img {
-    max-width: 600px;
+.canva img, .canva{
+    max-width: 350px;
 }
 
 #corridor {
