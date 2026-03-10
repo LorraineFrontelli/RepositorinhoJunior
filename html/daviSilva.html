@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davi Silva | Explore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Paleta: Neve + Tech Moderno */
+            --glass-bg: rgba(15, 25, 35, 0.5); 
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --border-glow: rgba(0, 195, 255, 0.2); 
+            
+            --text-main: #f8fafc;
+            --text-muted: #cbd5e1;
+            
+            --accent-blue: #38bdf8;
+            --accent-cyan: #00e5ff; 
+            --accent-white: #ffffff;
+            
+            /* Background Img - Alpes Suíços */
+            --bg-image-url: url('/assets/davi/plan.jpg');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), var(--bg-image-url);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            width: 90%;
+            animation: fade-in-up 1.2s ease-out;
+        }
+
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3), 0 0 15px var(--border-glow);
+            transition: box-shadow 0.4s ease;
+        }
+
+        .glass-panel:hover {
+            box-shadow: 0 15px 50px rgba(0,0,0,0.4), 0 0 25px var(--border-glow);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-container {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-cyan);
+            padding: 5px;
+            background: rgba(0,229,255, 0.1);
+            transition: 0.5s ease;
+            box-shadow: 0 0 20px rgba(0,229,255, 0.3);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(120deg, #fff 30%, var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1.5px;
+        }
+
+        .student-info {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .student-info strong {
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        main section {
+            padding: 50px;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        h2::before {
+            content: "";
+            width: 40px;
+            height: 2px;
+            background: var(--accent-cyan);
+        }
+
+        p {
+            font-weight: 300;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+        }
+
+        .highlight {
+            color: #fff;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .highlight::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--accent-blue);
+        }
+
+        .photo-emphasis {
+            margin-bottom: 50px;
+        }
+
+        h3.section-title {
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--accent-cyan);
+            margin-bottom: 30px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .photo-div {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid var(--glass-border);
+            cursor: pointer;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .photo-div img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .photo-div:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5), 0 0 15px var(--accent-cyan);
+        }
+
+        .curiosity-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .curiosity-list li {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            transition: 0.3s ease;
+            position: relative;
+        }
+
+        .curiosity-list li:hover {
+            background: rgba(0, 229, 255, 0.05);
+            border-color: rgba(0, 229, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-top: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .icon-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .icon-link:hover {
+            background: var(--accent-cyan);
+            color: #000;
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        @media (max-width: 900px) {
+            h1 { font-size: 2.8rem; }
+            .photo-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .photo-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Davi Silva</h1>
+            <div class="student-info">
+                <span>Nome: <strong>Davi Silva</strong></span>
+                <span>Foco: <strong>Desenvolvimento & Inovação</strong></span>
+            </div>
+        </header>
+
+        <main>
+            <section class="photo-emphasis">
+                <h3 class="section-title">Visual Alpine Horizon</h3>
+                <div class="photo-grid">
+                    <div class="photo-div"><img src="/assets/davi/1.jpg" alt="Picos nevados"></div>
+                    <div class="photo-div"><img src="/assets/davi/2.jpg" alt="Vilarejo Suíço"></div>
+                    <div class="photo-div"><img src="/assets/davi/3.jpg" alt="Trem de montanha"></div>
+                    <div class="photo-div"><img src="/assets/davi/4.jpg" alt="Lago Alpino"></div>
+                </div>
+            </section>
+
+            <section id="lugar" class="glass-panel">
+                <h2>O Cume da Engenharia Natural</h2>
+                <p>
+                    Meu desejo de explorar os <span class="highlight">Alpes Suíços</span> vai além do cenário contemplativo; é uma busca pelo equilíbrio perfeito entre a robustez da natureza e a precisão humana. Como alguém imerso no mundo da tecnologia e soluções digitais, vejo na Suíça um reflexo de eficiência e design impecável.
+                </p>
+                <p>
+                    Caminhar por vilarejos que parecem renderizados em alta definição, cercados por picos que desafiam a gravidade, é a inspiração definitiva para qualquer criador. É um lugar onde a infraestrutura de ponta — como os trens que cortam montanhas impossíveis — prova que, com a técnica certa, não existem barreiras geográficas para a inovação.
+                </p>
+            </section>
+
+            <section id="curiosidades" class="glass-panel">
+                <h2>Curiosidades sobre o lugar</h2>
+                <ul class="curiosity-list">
+                    <li>
+                    Caminhar por vilarejos que parecem renderizados em alta definição, cercados por picos que desafiam a gravidade, é a inspiração definitiva para qualquer criador. É um lugar onde a infraestrutura de ponta — como os trens que cortam montanhas impossíveis — prova que, com a técnica certa, não existem barreiras geográficas para a inovação.
+                    </li>    
+                    <li>
+                        A montanha mais famosa é o Matterhorn, por causa de sua forma triangular perfeita.
+                        Mas a mais alta da Suíça é o Dufourspitze, com cerca de 4.634 metros.
+                    </li>
+                    <li>
+                        É um lugar muito bonito e minha mãe já foi lá.
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p style="font-size: 0.8rem; opacity: 0.6; max-width: 100%;">
+            &copy; 2026 Davi Silva. Interface de Exploração Geográfica.
+        </p>
+    </footer>
+
+</body>
+</html>
