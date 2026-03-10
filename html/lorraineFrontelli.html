@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lorraine Frontelli | Experiência Machu Picchu 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
-            /* Paleta: Natureza + Tech */
-            --glass-bg: rgba(10, 20, 15, 0.45); /* Mais escuro para contraste */
+            --glass-bg: rgba(10, 20, 15, 0.45);
             --glass-border: rgba(255, 255, 255, 0.08);
-            --border-glow: rgba(0, 255, 200, 0.15); /* Ciano Neon suave */
-            
+            --border-glow: rgba(0, 255, 200, 0.15);
+
             --text-main: #f0f4f2;
             --text-muted: #b0bec5;
-            
+
             --accent-green: #4caf50;
-            --accent-cyan: #00e5ff; /* Contraste moderno */
+            --accent-cyan: #00e5ff;
             --accent-earth: #a1887f;
-            
-            /* Background Img - Você pode substituir esta URL pela sua foto preferida de Machu Picchu */
+
             --bg-image-url: url('https://images.unsplash.com/photo-1580470200593-2c13e4b476ac?q=80&w=2560&auto=format&fit=crop');
         }
 
@@ -39,44 +40,47 @@
             display: flex;
             flex-direction: column;
             overflow-x: hidden;
-            
-            /* Background Image Imersivo */
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), var(--bg-image-url);
+
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), var(--bg-image-url);
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Efeito Parallax */
+            background-attachment: fixed;
         }
 
-        /* Efeito de carregamento suave */
         @keyframes fade-in-up {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .container {
-            max-width: 1100px; /* Um pouco maior para a galeria */
+            max-width: 1100px;
             margin: 40px auto;
             padding: 20px;
             width: 90%;
             animation: fade-in-up 1.2s ease-out;
         }
 
-        /* Glassmorphism Genérico */
         .glass-panel {
             background: var(--glass-bg);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
             border: 1px solid var(--glass-border);
             border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3), 0 0 15px var(--border-glow);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 15px var(--border-glow);
             transition: box-shadow 0.4s ease;
         }
 
         .glass-panel:hover {
-            box-shadow: 0 15px 50px rgba(0,0,0,0.4), 0 0 25px var(--border-glow);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4), 0 0 25px var(--border-glow);
         }
 
-        /* Header */
         header {
             text-align: center;
             margin-bottom: 50px;
@@ -97,14 +101,14 @@
             object-fit: cover;
             border: 2px solid var(--accent-cyan);
             padding: 5px;
-            background: rgba(0,229,255, 0.1);
+            background: rgba(0, 229, 255, 0.1);
             transition: 0.5s ease;
-            box-shadow: 0 0 20px rgba(0,229,255, 0.3);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
         }
 
         .profile-container:hover .profile-img {
             transform: rotate(5deg) scale(1.05);
-            box-shadow: 0 0 30px rgba(0,229,255, 0.5);
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.5);
         }
 
         h1 {
@@ -132,7 +136,6 @@
             font-weight: 600;
         }
 
-        /* Seções de Texto */
         main section {
             padding: 50px;
             margin-bottom: 40px;
@@ -179,7 +182,6 @@
             background: var(--accent-green);
         }
 
-        /* NOVA SEÇÃO: Galeria de Fotos */
         .photo-emphasis {
             margin-bottom: 50px;
         }
@@ -196,13 +198,13 @@
 
         .photo-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
 
         .photo-div {
             width: 100%;
-            aspect-ratio: 1 / 1; /* Quadrado Perfeito */
+            aspect-ratio: 1 / 1;
             border-radius: 16px;
             overflow: hidden;
             position: relative;
@@ -218,32 +220,36 @@
             transition: transform 0.6s ease;
         }
 
-        /* Efeitos na Galeria */
         .photo-div:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.5), 0 0 15px var(--accent-cyan);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px var(--accent-cyan);
         }
 
         .photo-div:hover img {
             transform: scale(1.1);
         }
 
-        /* Overlay na foto ao passar o mouse */
         .photo-div::after {
-            content: "VER";
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(0, 229, 255, 0.2);
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 600; letter-spacing: 2px; color: white;
-            opacity: 0; transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .photo-div:hover::after {
             opacity: 1;
         }
 
-        /* Lista de Curiosidades */
         .curiosity-list {
             list-style: none;
             display: grid;
@@ -264,7 +270,8 @@
         .curiosity-list li::before {
             content: "✓";
             position: absolute;
-            top: 10px; right: 15px;
+            top: 10px;
+            right: 15px;
             font-size: 1.2rem;
             color: var(--accent-green);
             opacity: 0.3;
@@ -276,7 +283,6 @@
             transform: translateY(-5px);
         }
 
-        /* Footer */
         footer {
             margin-top: auto;
             text-align: center;
@@ -286,61 +292,64 @@
             backdrop-filter: blur(10px);
         }
 
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 20px;
-        }
-
-        .icon-link {
-            width: 45px;
-            height: 45px;
-            border-radius: 12px;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: 0.3s ease;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .icon-link:hover {
-            background: var(--accent-cyan);
-            color: #000;
-            transform: scale(1.1) rotate(-5deg);
-            box-shadow: 0 0 15px var(--accent-cyan);
-        }
-
-        /* Responsividade Avançada */
         @media (max-width: 900px) {
-            h1 { font-size: 2.8rem; }
-            main section { padding: 30px; }
-            .photo-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; } /* 2x2 no mobile médio */
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            main section {
+                padding: 30px;
+            }
+
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
         }
 
         @media (max-width: 600px) {
-            .container { margin: 20px auto; }
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.8rem; }
-            .student-info { flex-direction: column; gap: 5px; align-items: center; }
-            .photo-grid { grid-template-columns: 1fr; } /* 1 coluna no mobile pequeno */
-            .profile-img { width: 110px; height: 110px; }
+            .container {
+                margin: 20px auto;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .student-info {
+                flex-direction: column;
+                gap: 5px;
+                align-items: center;
+            }
+
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-img {
+                width: 110px;
+                height: 110px;
+            }
         }
 
         body::before {
             content: "";
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(0, 0, 0, 0.6);
             z-index: -1;
         }
     </style>
 </head>
+
 <body style="background-image: url('../assets/background/macchu-picchu.jpg');">
 
     <div class="container">
@@ -357,19 +366,20 @@
 
         <main>
             <section class="photo-emphasis">
-                <h3 class="section-title">Galeria Imersiva</h3>
+                <h3 class="section-title">Galeria</h3>
                 <div class="photo-grid">
                     <div class="photo-div">
-                        <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=800&auto=format&fit=crop" alt="Machu Picchu Vista Geral">
+                        <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=800&auto=format&fit=crop"
+                            alt="Machu Picchu Vista Geral">
                     </div>
                     <div class="photo-div">
-                        <img src="https://images.unsplash.com/photo-1587593810167-a84920ea0781?q=80&w=800&auto=format&fit=crop" alt="Detalhes de Pedra Inca">
+                        <img src="../assets/lorraine/PedraIntihuatana.jpg" alt="Detalhes de Pedra Inca">
                     </div>
                     <div class="photo-div">
-                        <img src="https://images.unsplash.com/photo-1580470200593-2c13e4b476ac?q=80&w=800&auto=format&fit=crop" alt="Montanhas Huayna Picchu">
+                        <img src="../assets/lorraine/construcao.jpg" alt="Montanhas Huayna Picchu">
                     </div>
                     <div class="photo-div">
-                        <img src="https://images.unsplash.com/photo-1581104618210-21a473af4d37?q=80&w=800&auto=format&fit=crop" alt="Lhama em Machu Picchu">
+                        <img src="../assets/lorraine/lhama.jpg" alt="Lhama em Machu Picchu">
                     </div>
                 </div>
             </section>
@@ -377,12 +387,12 @@
             <section id="lugar" class="glass-panel">
                 <h2>O Destino dos Sonhos</h2>
                 <p>
-                    Meu desejo de explorar <span class="highlight">Machu Picchu, no Peru</span>, nasce de uma profunda conexão com o passado. 
-                    Como entusiasta da história, sinto-me fascinada pela preservação de lugares que guardam as vozes de civilizações antigas.
-                </p>
-                <p>
-                    É impressionante contemplar a engenharia dos Incas: como ergueram uma cidade inteira no topo de montanhas escarpadas no século XV? 
-                    A altitude desafiadora e a experiência visual das cordilheiras prometem uma perspectiva única de mundo, onde a natureza e o esforço humano se fundem em um cenário atemporal.
+                    Eu gostaria muito de conhecer Machu Picchu porque eu me interesso bastante por história
+                    e acho muito legal conhecer lugares antigos. Acho impressionante imaginar como os incas
+                    conseguiram construir uma cidade inteira no alto das montanhas há tanto tempo. A altitude
+                    do lugar também chama muito a minha atenção e deve ser uma experiência bem diferente estar
+                    lá em cima e ver toda a paisagem ao redor. Além disso, seria muito interessante poder
+                    conhecer de perto um lugar tão famoso e cheio de história.
                 </p>
             </section>
 
@@ -398,15 +408,11 @@
     </div>
 
     <footer>
-        <div class="social-icons">
-            <a href="#" class="icon-link">IN</a>
-            <a href="#" class="icon-link">GH</a>
-            <a href="#" class="icon-link">IG</a>
-        </div>
         <p style="font-size: 0.8rem; opacity: 0.6; max-width: 100%;">
             &copy; 2026 Lorraine Frontelli. Proposta de Design Imersivo.
         </p>
     </footer>
 
 </body>
+
 </html>
