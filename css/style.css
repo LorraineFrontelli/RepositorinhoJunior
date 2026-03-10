@@ -1,0 +1,130 @@
+/* =========================================
+   RESET BÁSICO (Coloque no style.css)
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #53763a;
+    --wall-color: grey;
+}
+
+html, body {
+    /* Força a tela a ter o tamanho exato da janela, sem rolar para baixo */
+    height: 100vh;
+    width: 100vw;
+    overflow-y: hidden; /* Remove rolagem vertical */
+    overflow-x: auto;   /* Permite rolagem horizontal geral */
+    background-color: var(--wall-color);
+    background-image: url('../assets/background/concrete.jpg');
+    background-size: 35%;
+    background-position: center;
+    background-repeat: repeat;
+    font-family: sans-serif; /* Mude para sua fonte */
+}
+
+/* =========================================
+   O CORREDOR DO MUSEU (A Mágica do Scroll)
+   ========================================= */
+#corridor {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centraliza os quadros e textos no meio da parede */
+    height: 100%;
+    
+    /* Importante para a rolagem horizontal funcionar sem amassar os itens */
+    width: max-content; 
+    padding: 0 15vw; /* Dá um respiro no começo e no fim do museu */
+    gap: 10rem; /* Espaçamento entre os quadros/textos */
+}
+
+/* Evita que os elementos encolham para caber na tela */
+.museum-item {
+    flex-shrink: 0; 
+}
+
+/* =========================================
+   ESTILOS DOS COMPONENTES (template.css)
+   ========================================= */
+.name-container h1 {
+    color: black;
+    line-height: 1.2;
+    font-size: 3rem;
+    max-width: 500px;
+}
+
+.artwork-display {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem; /* Espaço entre o quadro e a ficha técnica */
+}
+
+/* Estilo do Quadro (A pintura no fundo e a moldura na frente) */
+.canva {
+    width: 350px;
+    height: 450px; /* Ajuste conforme a proporção da sua moldura */
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Adicionando uma sombrinha de quadro na parede */
+    box-shadow: 10px 15px 25px rgba(0,0,0,0.5); 
+}
+
+/* A moldura é uma imagem PNG vazada que fica por cima do background */
+.canva img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; 
+    pointer-events: none; /* Pra imagem não bugar caso queira clicar */
+}
+
+/* Definindo as Pinturas por ID */
+#davi {
+    background-image: url('../assets/davi/baiacu.png');
+}
+
+#lorraine {
+    background-image: url('../assets/lorraine/lorraine.jpeg');
+}
+
+/* Estilos de Texto e Placas de Museu */
+.text {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.9); /* Plaquinha branca estilo museu */
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+}
+
+.text h2 {
+    border-bottom: 2px solid var(--green);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.text ul {
+    list-style-position: inside;
+}
+
+.expand {
+    min-width: 400px;
+}
+
+.paragraph {
+    min-width: 600px;
+    max-width: 800px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: white; /* Texto escrito direto na parede do museu */
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 8px;
+}
