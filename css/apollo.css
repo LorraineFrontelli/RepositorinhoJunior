@@ -1,0 +1,199 @@
+/* Importando fontes tecnológicas */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500&family=Michroma&display=swap');
+
+:root {
+    --bg-dark: #020203;
+    --panel-bg: #0a0b10;
+    --cyber-blue: #00d1ff;
+    --deep-blue: #0044ff;
+    --text-main: #b0c4de;
+    --text-bright: #ffffff;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'JetBrains Mono', monospace;
+    margin: 0;
+    padding: 40px 10%;
+    line-height: 1.6;
+    background-image: radial-gradient(circle at 50% 50%, #001a33 0%, #020203 100%);
+}
+
+/* Header */
+header {
+    border-left: 4px solid var(--cyber-blue);
+    padding: 10px 30px;
+    margin-bottom: 60px;
+    background: linear-gradient(90deg, rgba(0, 209, 255, 0.05), transparent);
+}
+
+h1 {
+    font-family: 'Michroma', sans-serif;
+    color: var(--text-bright);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+/* Seções */
+section {
+    background: var(--panel-bg);
+    border: 1px solid rgba(0, 209, 255, 0.1);
+    padding: 30px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+h2 {
+    font-family: 'Michroma', sans-serif;
+    font-size: 1rem;
+    color: var(--cyber-blue);
+    text-transform: uppercase;
+    border-bottom: 1px dashed rgba(0, 209, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+/* --- ESTILIZAÇÃO DE LISTAS (Geral / Curiosidades) --- */
+/* Aplica-se a todas as listas, exceto à de animes */
+section:not(#animes) ul {
+    list-style: none;
+    padding: 0;
+}
+
+section:not(#animes) li {
+    position: relative;
+    padding: 15px 15px 15px 40px;
+    margin-bottom: 10px;
+    background: rgba(0, 209, 255, 0.03);
+    border-left: 2px solid var(--deep-blue);
+    transition: 0.3s;
+}
+
+section:not(#animes) li::before {
+    content: ">>"; /* Marcador estilo terminal */
+    position: absolute;
+    left: 10px;
+    color: var(--cyber-blue);
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+section:not(#animes) li:hover {
+    background: rgba(0, 209, 255, 0.08);
+    border-left-color: var(--cyber-blue);
+    transform: translateX(5px);
+}
+
+/* --- MANUTENÇÃO DA LISTA DE ANIMES --- */
+#animes ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 8px;
+}
+
+#animes li {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px 12px;
+    border: 1px solid rgba(0, 209, 255, 0.05);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+#animes li::before {
+    content: none; /* Remove o ">>" da lista de animes */
+}
+
+#animes li:hover {
+    border-color: var(--cyber-blue);
+    color: var(--text-bright);
+    background: rgba(0, 209, 255, 0.05);
+    transform: none;
+}
+
+/* Galeria e Imagens */
+.foto_galeria {
+    width: 100%;
+    filter: saturate(0.5) contrast(1.1);
+    border: 1px solid rgba(0, 209, 255, 0.2);
+}
+
+/* Footer */
+footer {
+    text-align: right;
+    font-size: 0.7rem;
+    margin-top: 100px;
+    border-top: 1px solid rgba(0, 209, 255, 0.1);
+    padding-top: 20px;
+    opacity: 0.5;
+}
+
+/* Destaque para o seu nome no conteúdo */
+strong {
+    color: var(--cyber-blue);
+    text-shadow: 0 0 5px rgba(0, 209, 255, 0.3);
+}
+
+/* --- SEÇÃO DA GALERIA --- */
+#galeria {
+    padding: 30px;
+    background: var(--panel-bg);
+    border: 1px solid rgba(0, 209, 255, 0.1);
+    
+    /* Permite que o título fique em cima e o carrossel embaixo */
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+/* Título no topo, ocupando 100% da largura */
+#galeria h2 {
+    width: 100%;
+    margin-bottom: 25px;
+    border-bottom: 1px dashed rgba(0, 209, 255, 0.3);
+    padding-bottom: 10px;
+}
+
+/* Container interno para as imagens (O carrossel real) */
+/* Se não quiser mexer no HTML, podemos aplicar o scroll direto na section e ajustar o h2 */
+/* Mas para ficar perfeito, o ideal é que as imagens fiquem num 'trilho' */
+
+#galeria {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--cyber-blue) transparent;
+}
+
+/* Ajuste das Imagens Estilo Poster Vertical */
+.foto_galeria {
+    flex: 0 0 250px;      /* Largura estreita */
+    height: 480px;        /* Bem alta e imponente */
+    object-fit: cover;
+    scroll-snap-align: start;
+    
+    border: 1px solid rgba(0, 209, 255, 0.2);
+    filter: saturate(0.7) contrast(1.1);
+    transition: all 0.4s ease;
+}
+
+.foto_galeria:hover {
+    border-color: var(--cyber-blue);
+    filter: saturate(1.1) brightness(1.1);
+    box-shadow: 0 0 20px rgba(0, 209, 255, 0.2);
+    transform: translateY(-5px); /* Sobe um pouquinho ao focar */
+}
+
+/* Estilização da barra de rolagem */
+#galeria::-webkit-scrollbar {
+    height: 5px;
+}
+
+#galeria::-webkit-scrollbar-thumb {
+    background: var(--cyber-blue);
+}
+
+#galeria::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
