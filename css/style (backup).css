@@ -12,10 +12,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-x: auto;
 }
 
-.canva img {
-    max-width: 600px;
+.canva img, .canva{
+    max-width: 350px;
 }
 
 #corridor {
@@ -42,9 +43,9 @@ body {
 }
 
 #davi {
-    background-image: url('assets/davi/baiacu.png');
+    background-image: url('../assets/davi/baiacu.png');
 }
 
 #lorraine {
-    background-image: url('assets/lorraine/lorraine.jpeg');
+    background-image: url('../assets/lorraine/lorraine.jpeg');
 }

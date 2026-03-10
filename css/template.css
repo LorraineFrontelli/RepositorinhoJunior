@@ -1,0 +1,81 @@
+body {
+    height: 100vh;
+    flex-direction: column;
+    justify-content: baseline;
+    overflow-y: hidden;
+
+    background-color: grey;
+    background-image: url('../assets/background/concrete.jpg');
+    background-size: 35%;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+body>* {
+    width: 100%;
+    margin-left: 20rem;
+}
+
+body h1 {
+    text-align: left;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 60%;
+    gap: 10%;
+}
+
+main>*>* {
+    background-color: red;
+}
+
+.name-container {
+    display: flex;
+}
+
+h1 {
+    color: black;
+    line-height: 1;
+    display: inline-block;
+    margin: 0;
+    line-height: 1;
+    padding: 0;
+    vertical-align: bottom;
+}
+
+.text,
+.paragraph {
+    display: flex;
+    flex-direction: column;
+}
+
+div:has(.canva)>:nth-child(2) {
+    margin-left: 10%;
+}
+
+.text {
+    min-width: 400px;
+}
+
+.expand {
+    min-width: 700px;
+}
+
+.paragraph {
+    min-width: 500px;
+}
+
+.text>* {
+    white-space: nowrap;
+}
+
+.sculpture {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    background-color: red;
+}
