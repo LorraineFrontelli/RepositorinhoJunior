@@ -54,12 +54,10 @@ Agradecemos ao professor Carlinhos pelas aulas cedidas para elaboração do proj
 O membro fez um site relatando sobre o desejo de conhecer os montes suiços (Suiça, Europa) e seguiu a estrutura orientada pela atividade.
 
 ### Lorraine Frontelli
-O membro fez um site relatando sobre o desejo de conhecer Matchu Pitchu (Peru, América do Sul) por conta do envolvimento e curiosidade sobre lugares antigos. Além disso, relatou sobre curiosidades do lugar.
+O membro fez um site relatando sobre o desejo de conhecer Matchu Pitcchu (Peru, América do Sul) por conta do envolvimento e curiosidade sobre lugares antigos. Além disso, relatou sobre curiosidades do lugar.
 
 ### Eduardo Rodrigues
 O membro fez um site relatando sobre o desejo de conhecer Shibuya (Japão, Ásia) por conta do envolvimento e curiosidade sobre a cultura local. Além disso, abrangeu todas as experiências pessoais.
 
 ### Felipe Boregio
-O membro fez um site relatando sobre o desejo de conhecer os Lençóis Maranhenses (Maranhão, Brásil) por conta da beleza local e da sensação de "estar no meio do nada".
-
-lá ele!
+O membro fez um site relatando sobre o desejo de conhecer os Lençóis Maranhenses (Maranhão, Brasil) por conta da beleza local e da sensação de "estar no meio do nada".
